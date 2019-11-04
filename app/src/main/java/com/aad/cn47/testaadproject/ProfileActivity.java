@@ -134,14 +134,16 @@ public class ProfileActivity extends AppCompatActivity {
         String body2 = TEXT_TO_SHARE2;
 
         //Step 2: Create the shareIntent with action 'Intent.ACTION_SEND'
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        Intent sendIntent = new Intent(Intent.ACTION_SEND);
 
         //Step 3: Specify the intent type
         //E.g. shareIntent.setType("text/plain");
-        shareIntent.setType("text/plain");
+        sendIntent.setType("text/plain");
 
         //Step 4: Add the text to share as an extra data (Intent.EXTRA_TEXT)
-        shareIntent.putExtra(Intent.EXTRA_TEXT, body2);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, body2);
+
+        Intent shareIntent = Intent.createChooser(sendIntent, null);
 
         //Step 5: Start shareIntent
         startActivity(shareIntent);
