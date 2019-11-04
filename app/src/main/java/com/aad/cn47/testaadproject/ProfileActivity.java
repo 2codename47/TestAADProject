@@ -1,10 +1,13 @@
 package com.aad.cn47.testaadproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,6 +24,30 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.profile_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_share) {
+            createShareIntent();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public void createPhoneIntent(View view){
@@ -60,7 +87,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void createMapIntent(View view){
         //Step 1: Create the data for this intent using the Long & Lat of the location
-        Uri uri = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
+        Uri uri = Uri.parse("geo:0,0?q=12 Community Road, Ikeja");
 
         //Step 2: Create a mapIntent with action "Intent.ACTION_VIEW". Pass the data too
         Intent mapIntent = new Intent(Intent.ACTION_VIEW);
@@ -83,7 +110,7 @@ public class ProfileActivity extends AppCompatActivity {
     public void createBrowserIntent(View view){
         //Step 1: Create te data for this intent using the Twitter Profile address
         //E.g "https://twitter.com/SirGoingFar"
-        Uri uri = Uri.parse("https://twitter.com/SirGoingFar");
+        Uri uri = Uri.parse("https://www.linkedin.com/in/chidi-uwaleke-3769b9a8/");
 
         //Step 2: Create a browserIntent with action 'Intent.ACTION_VIEW'
         Intent browserIntent = new Intent(Intent.ACTION_VIEW);
