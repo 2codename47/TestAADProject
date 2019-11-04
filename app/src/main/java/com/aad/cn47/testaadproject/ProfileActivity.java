@@ -94,12 +94,11 @@ public class ProfileActivity extends AppCompatActivity {
         Uri uri = Uri.parse("geo:0,0?q="  + Uri.encode("12 Community Rd, Allen, Ikeja, Lagos"));
 
         //Step 2: Create a mapIntent with action "Intent.ACTION_VIEW". Pass the data too
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, uri);
 
         //Step 3: Set the package name of the Map App (i.e the unique name of the app)
         //E.g mapIntent.setPackage("com.google.android.apps.maps");
         mapIntent.setPackage("com.google.android.apps.maps");
-        mapIntent.setData(uri);
 
         //Step 4: Check if the Map app is available to ACCEPT this intent, if Map app is available, start the Map Activity
         if(mapIntent.resolveActivity(getPackageManager()) != null){
