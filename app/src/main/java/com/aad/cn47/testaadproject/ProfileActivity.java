@@ -20,6 +20,12 @@ public class ProfileActivity extends AppCompatActivity {
             "Location: 12 Community Road, Ikeja\n" +
             "LinkedIn: https://www.linkedin.com/in/chidi-uwaleke-3769b9a8/";
 
+    private final String TEXT_TO_SHARE2 = "PERSONAL INFORMATION \n\n" +
+            "Name: Chidi Uwaleke \n" +
+            "Phone: 09095966472 \n" +
+            "Email: cjy2k1@yahoo.com \n" +
+            "Location: 12 Community Road, Ikeja\n";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,7 +128,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void createShareIntent() {
         //Step 1: Compose the text to share
-        String body = TEXT_TO_SHARE;
+        String body2 = TEXT_TO_SHARE2;
 
         //Step 2: Create the shareIntent with action 'Intent.ACTION_SEND'
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -132,7 +138,7 @@ public class ProfileActivity extends AppCompatActivity {
         shareIntent.setType("text/plain");
 
         //Step 4: Add the text to share as an extra data (Intent.EXTRA_TEXT)
-        shareIntent.putExtra(Intent.EXTRA_TEXT, body);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, body2);
 
         //Step 5: Start shareIntent
         startActivity(shareIntent);
