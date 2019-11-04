@@ -91,7 +91,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void createMapIntent(View view){
         //Step 1: Create the data for this intent using the Long & Lat of the location
-        Uri uri = Uri.parse("geo:0,0?q=12 Community Rd, Allen, Ikeja");
+        Uri uri = Uri.parse("geo:0,0?q="  + Uri.encode("12 Community Rd, Allen, Ikeja, Lagos"));
 
         //Step 2: Create a mapIntent with action "Intent.ACTION_VIEW". Pass the data too
         Intent mapIntent = new Intent(Intent.ACTION_VIEW);
