@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    private final String SUBJECT = "Personal Info";
+
     private final String TEXT_TO_SHARE = "PERSONAL INFORMATION \n\n" +
             "Name: Chidi Uwaleke \n" +
             "Phone: 09095966472 \n" +
@@ -68,6 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void createMailClientIntent(View view){
         //Step 1: Compose the text to share
+        String subject = SUBJECT;
         String body = TEXT_TO_SHARE;
 
         //Step 2: Create an mailClientIntent with action 'Intent.ACTION_SENDTO'
@@ -78,6 +81,7 @@ public class ProfileActivity extends AppCompatActivity {
         mailClientIntent.setData(datauri);
 
         //Step 4: Add the text to share as an extra (Intent.EXTRA_TEXT)
+        mailClientIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
         mailClientIntent.putExtra(Intent.EXTRA_TEXT, body);
 
         //Step 5: Check if any Mail Client is available to ACCEPT this intent
