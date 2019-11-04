@@ -1,112 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
-
-    <LinearLayout
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:context=".ProfileActivity">
 
-        <ImageView
-            android:id="@+id/iv_profile_pic"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="16dp"
-            android:src="@mipmap/chidi1"
-            android:transitionName="@+id/iv_profile_pic"/>
-
-        <!-- Name -->
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/bg_bio_item"
-            android:drawableStart="@drawable/ic_person"
-            android:drawablePadding="16dp"
-            android:padding="16dp"
-            android:text="@string/full_name"
-            android:textSize="18sp" />
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Phone -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/bg_bio_item"
-            android:focusable="true"
-            android:drawableStart="@drawable/ic_call"
-            android:drawablePadding="16dp"
-            android:clickable="true"
-            android:onClick="createPhoneIntent"
-            android:padding="16dp"
-            android:text="@string/phone"
-            android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/iv_profile_pic"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:src="@mipmap/chidi1"
+                android:transitionName="@+id/iv_profile_pic"/>
 
-        <!-- Mail -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/bg_bio_item"
-            android:focusable="true"
-            android:drawableStart="@drawable/ic_email"
-            android:drawablePadding="16dp"
-            android:clickable="true"
-            android:onClick="createMailClientIntent"
-            android:padding="16dp"
-            android:text="@string/email"
-            android:textSize="18sp" />
+            <!-- Name -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_bio_item"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="16dp"
+                android:padding="16dp"
+                android:text="@string/full_name"
+                android:textSize="18sp" />
 
-        <!-- Location -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/bg_bio_item"
-            android:focusable="true"
-            android:drawableStart="@drawable/ic_location"
-            android:drawablePadding="16dp"
-            android:clickable="true"
-            android:onClick="createMapIntent"
-            android:padding="16dp"
-            android:text="@string/map_address"
-            android:textSize="18sp" />
+            <!-- Phone -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_bio_item"
+                android:focusable="true"
+                android:drawableStart="@drawable/ic_call"
+                android:drawablePadding="16dp"
+                android:clickable="true"
+                android:onClick="createPhoneIntent"
+                android:padding="16dp"
+                android:text="@string/phone"
+                android:textSize="18sp" />
 
-        <!-- Website -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/bg_bio_item"
-            android:clickable="true"
-            android:drawableStart="@drawable/ic_twitter"
-            android:drawablePadding="16dp"
-            android:focusable="true"
-            android:onClick="createBrowserIntent"
-            android:padding="16dp"
-            android:text="@string/social"
-            android:textSize="18sp" />
-    </LinearLayout>
+            <!-- Mail -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_bio_item"
+                android:focusable="true"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="16dp"
+                android:clickable="true"
+                android:onClick="createMailClientIntent"
+                android:padding="16dp"
+                android:text="@string/email"
+                android:textSize="18sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Location -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_bio_item"
+                android:focusable="true"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="16dp"
+                android:clickable="true"
+                android:onClick="createMapIntent"
+                android:padding="16dp"
+                android:text="@string/map_address"
+                android:textSize="18sp" />
+
+            <!-- Website -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_bio_item"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_twitter"
+                android:drawablePadding="16dp"
+                android:focusable="true"
+                android:onClick="createBrowserIntent"
+                android:padding="16dp"
+                android:text="@string/social"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
